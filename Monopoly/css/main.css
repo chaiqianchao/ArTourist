@@ -1,0 +1,260 @@
+/*
+ * 统一规定最上层 z-index 值为5
+ * 第二层（中间层）z-index 值为3
+ * 第三层（最下层）z-index 值为1
+ */
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/*
+ * 强制横屏显示：通过竖屏时旋转解决横屏问题
+ * 
+ */
+/*css媒介查询判断*/
+ /*竖屏 */
+/*@media (orientation: landscape) {
+	#wrapper{
+		background-color: #c1c1c1;
+	}
+ }
+ 横屏
+@media (orientation: portrait) { 
+	#wrapper{
+		background-color: #FFCD43;
+	}
+}
+*/
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper p {
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+img {
+  border: none;
+}
+/*媒体查询，控制强制横屏*/
+/*@media screen and (orientation: portrait) {
+      html{
+	     
+		 width : 100% ;
+		 height : 100% ;
+		  background-color: white ;
+		  overflow-y : scroll;
+	  }
+	  body{
+	     
+	      width : 100% ;
+		 height : 100% ;
+		 background-color: white ;
+		 overflow-y : scroll;
+	  }
+	  
+	  #orientationContainer{
+	     position : absolute ;
+		  overflow : hidden;
+		 background-color: white ;
+	  }
+	 
+	  
+	  
+} 
+@media screen and (orientation: landscape) {
+       html{
+	   
+		 width : 100% ;
+		 height : 100% ;
+		 background-color: white ;
+	  }
+	  
+	  #orientationContainer{
+	     position : absolute ;
+		 top : 0 ; 
+		 left : 0 ;
+		 width : 100% ;
+		 height : 100% ;
+		 background-color: white ;
+	  }
+	  
+	   body{
+	      width : 100% ;
+		 height : 100% ;
+		 background-color: white ;
+	  }
+}
+*/
+
+@keyframes rollchange{
+	from {
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes breath {
+  50% {
+    -webkit-transform: scale(0.9);
+  }
+}
+body{
+	webkit-transform: translate3d(0,0,0);
+-moz-transform: translate3d(0,0,0);
+-ms-transform: translate3d(0,0,0);
+-o-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+-webkit-backface-visibility:hidden;
+-webkit-perspective:1000;
+	
+}
+.sceneContainer{
+	position : absolute ;
+	top : 0 ;
+	width : 100% ;
+	height : 100% ;
+}
+#frontPage{
+	z-index : 10;
+	
+}
+.bgContainer{
+	position : absolute ;
+	top : 0 ;
+	z-index : 0 ;
+	width : 100%;
+	height : 100%;
+}
+.bgContainer img{
+	width : 100% ;
+	height : 100% ;
+}
+.frontContainer{
+	position : absolute ;
+	top : 0 ;
+	z-index : 1 ;
+	width : 100%;
+	height : 100%;
+}
+
+/*左上角头像信息位置*/
+.frontContainer .infoBox{
+	position: absolute;
+	left: 0;
+	width: 30%;
+	/*height: 30px;*/
+	top: 0;
+	z-index: 5;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/*background-color: red;*/
+}
+/*返回按钮样式*/
+.frontContainer .infoBox img{
+	width: 50px;
+	margin-left: -26px;
+}
+/*上方中间地点栏目位置*/
+.frontContainer .containerBox{
+	position: absolute;
+	left: 30%;
+	width: 40%;
+	height: 34px;
+	top: 0;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/*右上角设置栏*/
+.frontContainer .settingContainBox{
+	position: absolute;
+	left: 70%;
+	width: 30%;
+	height: 10%;
+	top: 0;
+	z-index: 5;
+	/*background-color: blue;*/
+	/*opacity: 0.4;*/
+}
+.settingContainBox img{
+	width: 30px;
+	float: right;
+	padding: 6px;
+	margin-right: 5px;
+}
+/*音乐图标旋转*/
+.musicImg{
+	transform-origin: 50% 50%;
+	/*音乐取消立即播放*/
+	/*animation: rollchange 15s linear 0s infinite;*/
+}
+/*.frontContainer .infoBox .infoBoxImg{
+	width: 32%;
+	height: 100%;
+}*/
+/*.frontContainer .infoBox img{*/
+	/*图片之后添加头像边框效果*/
+	/*border-radius: 50%;*/
+	/*图片有5像素的间隙*/
+/*	padding: 5px;
+	width: 100%;
+	height: 100%;
+}*/
+/*左上角信息*/
+/*.frontContainer .infoBox .infoBoxMessage{
+	width: 60%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding-left: 10px;
+	z-index: 5;
+}*/
+
+.infoBoxMessage .messageName{
+	padding: 2px 0px 1px 0px;
+	flex: 1;
+}
+.infoBoxMessage .messageScore{
+	flex: 1;
+}
+.infoBoxMessage .messageMoney{
+	flex: 1;
+	color: #F8F804;
+}
+.dollor{
+	color: #F8F804;
+}
+/*设置图片呼吸放大,可存放头像*/
+.frontContainer .breathBtn{
+	position : absolute;
+	left : 10px;
+	width : 50px;
+	height: 10%;
+	z-index : 5 ;
+    -webkit-animation: breath 1s;
+    -webkit-animation-iteration-count: infinite;	
+}
+
+.breathBtnTop{
+	top : 40%;
+}
+.breathBtnBottom{
+	top : 50%;
+}
+.frontContainer .breathBtn img{
+	width: 40px;
+	border-radius: 50%;
+}
+

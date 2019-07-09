@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 禁止缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>大富翁</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+</head>
+<body id="wrapper">
+        <!-- http://img.redocn.com/sheji/20141219/zhongguofengdaodeliyizhanbanzhijing_3744115.jpg -->
+    <div id="orientationContainer">
+        <!--audio src="music/music.mp3" id="audio" loop="loop" controls="controls" style="opacity : 0 ;"></audio-->
+        <div id="frontPage" class="sceneContainer">
+            <div id="snowHere" class="bgContainer">
+                <img src="./src/images/bg.png" alt="">
+            </div>
+            <div class="frontContainer">
+                <div class="infoBox">
+                    <img src="./src/images/back.png" alt="" onclick="backOnClick()">
+                   <!--  <div id="infoBoxImg" class="infoBoxImg"><img src="./images/info.jpg"></div>
+                    <div id="infoBoxMessage" class="infoBoxMessage">
+                        <div class="messageName">{{name}}</div>
+                        <div class="messageScore"><span class="">积分：</span>{{score}}</div>
+                        <div class="messageMoney">金币：<span class="dollor">$</span>{{money}}</div>
+                    </div> -->
+                </div>
+                <div class="containerBox">
+                <!-- 显示积分     -->
+                    <span>积分：{{score}}</span>
+                </div>
+                <div class="settingContainBox">
+                <!-- 设置、音乐等栏目     -->
+                    <img id="musicImg" class="musicImg" src="./src/images/music.png" alt="" onclick="musicAutoPlay()">
+                    <img src="./src/images/setting.png" alt="" onclick="settings()">
+                </div>
+                <div class="breathBtn breathBtnTop">
+                    <img src="./src/images/breath1.png" alt="">
+                </div>
+                <div class="breathBtn breathBtnBottom">
+                    <img src="./src/images/breath1.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- 额外内容音乐 -->
+    <audio id="bgMusicAudio" src="./src/music/bgLagTime.mp3" autoplay="autoplay" controls="controls" loop="false" hidden="true" >
+    您的浏览器不支持 audio
+    </audio>
+</body>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#orientationContainer',
+        data: {
+            name: "我是昵称",
+            score: 300,
+            money: 4000,
+        },
+        methods: {   
+
+        }
+       
+    })
+    
+</script>
+<!-- <script type="text/javascript" src="js/orientation.js"></script> -->
+<script type="text/javascript">
+    // changeOrientation($('#orientationContainer'));
+    // 修改左上角头像位置 三条信息高度
+    // var infoBoxMessage = document.getElementById("infoBoxMessage");
+    // var infoBoxImg = document.getElementById("infoBoxImg");
+    // console.log(infoBoxImg.offsetHeight);
+    // infoBoxMessage.style.height = infoBoxImg.offsetHeight +"px";
+    
+</script>
+<script type="text/javascript" src="js/domain.js"></script>
+</html>

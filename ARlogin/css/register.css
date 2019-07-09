@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    border:none;
+}
+.registerContainer{
+	width: 100%;
+	height: 100%;
+}
+.left{
+	float: left;
+	transform: scale(2,2);
+	margin-left: 10px;
+}
+.right{
+	font-size: 22px;
+}
+.topbar{
+	text-align: center;
+	background-color: #c1c1c1;
+	padding: 5px 0px 5px 0px;
+}
+.inputContent{
+	width: 70%;
+	position: absolute;
+	top: 28%;
+	left: 15%;
+	padding-left: 10px;
+	margin:0 auto;
+}
+.phone{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#phoneNumber-icon{
+	/*line-height: 30px;*/
+	width: 30px;
+	float: left;
+	transform: scale(1.3,1.3);
+	text-align: center;
+}
+
+.phoneNumber-icon i{
+	margin: 0 auto;
+}
+.input{
+	width: 100%;
+	height: 32px;
+    text-indent: 10px;
+	background-color:transparent;/*设置底色透明*/
+	outline: none;
+	font-size: 12pt;
+	border-color: #000;
+	border-style: solid;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 2px;
+	border-left-width: 0px;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.icon-clearContent{
+	position: relative;
+	left: -8%;
+	width: 22px;
+	height: 22px;
+}
+.icon-closeEye{
+	position: relative;
+	left: -8%;
+	width: 22px;
+	height: 22px;
+}
+.icon-openEye{
+	position: relative;
+	left: -8%;
+	width: 22px;
+	height: 22px;
+}
+.none{
+    display:none;
+}
+.sendImessage{
+	position: relative;
+	left: -8%;
+	width: 22px;
+	height: 22px;
+}
+#sendImessage{
+	width: 100px;
+	height: 30px;
+	font-size: 4pt;
+	/*margin:0 auto; */
+	margin-left: -10px;
+}
+.send{
+	display: flex;
+	flex-direction: row;
+}
+.yanzhengma{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.remember input[type*="checkbox"]{
+    width: 20px;
+    height: 20px;
+    vertical-align: super;
+    margin-right: 12px;
+}
+.remember input[type=checkbox]:checked + label:after {
+    opacity: 1;
+    border-color: #74884a;
+}
+.agreement{
+	text-align: center;
+	font-size: 6pt;
+}
+
+.register{
+	margin-top: 20px;
+	width: 100%;
+	height: 32px;
+	text-align: center;
+}
+.register button{
+   	width: 90%;
+	height: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    background: -moz-linear-gradient(
+            top,
+            #94aa64 0%,
+            #7a924a 50%,
+            #607738);
+    background: -webkit-gradient(
+            linear, left top, left bottom,
+            from(#94aa64),
+            color-stop(0.50, #7a924a),
+            to(#607738));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #7d8862;
+    -moz-box-shadow:
+            0px 1px 0px rgba(170,170,170,1),
+            inset 0px 1px 1px rgba(255,255,255,0.7);
+    -webkit-box-shadow:
+            0px 1px 0px rgba(170,170,170,1),
+            inset 0px 1px 1px rgba(255,255,255,0.7);
+    box-shadow:
+            0px 1px 0px rgba(170,170,170,1),
+            inset 0px 1px 1px rgba(255,255,255,0.7);
+    text-shadow:
+            0px -1px 0px rgba(000,000,000,0.3),
+            0px 0px 0px rgba(255,255,255,0);
+}
+.register button:hover{
+    opacity: 0.8;
+}
+
+.hrLine{
+  vertical-align:middle;
+  display:inline-block;
+}

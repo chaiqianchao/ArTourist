@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 禁止缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>ARforgetPas</title>
+    <link href="css/register.css" rel="stylesheet" type="text/css"/>
+    <link  href="css/iconfont.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/domain.js"></script>
+</head>
+<body>
+    <div class="registerContainer">
+        <div class="topbar">
+            <span class="left"><i class="iconfont icon-fanhui" onclick="backLogin()"></i></span>
+            <span class="right">忘记密码</span>
+        </div>
+
+        <div class="inputContent">
+            <div class="phone">
+                <span id="phoneNumber-icon"><i class="iconfont icon-shouji phoneNumber-icon"></i></span>
+                <input id="phoneNumber" type="input" name="phoneNumber" class="input phoneNumber" placeholder="请输入手机号码" >
+                <i class="iconfont icon-clearContent phoneNumber" onclick="clearContent(this)"></i><div class="block"></div>
+            </div>
+            <div class="send">
+                <div class="yanzhengma">
+                    <span id="phoneNumber-icon"><i class="iconfont icon-yuechi phoneNumber-icon"></i></span>
+                    <input id="yanzhengma" type="input" name="phoneNumber" class="input phoneNumber" placeholder="请输入验证码" >
+                    <div class="sendImessage"></div>
+                </div>
+                <button id="sendImessage" onclick="sendMessage()">发送验证码</button>
+            </div>
+            <div class="phone">
+                <span id="phoneNumber-icon"><i class="iconfont icon-suoding phoneNumber-icon"></i></span>
+                <input id="input_pas" type="password" name="phoneNumber" class="input phoneNumber" placeholder="请重新输入密码" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+                <i class="iconfont icon-closeEye eyes secreteyes"></i>
+                <i class="iconfont icon-openEye none eyes secreteyesk"></i>
+            </div>
+
+           <!-- 注册以及登入回返 -->
+           <div class="register"><button onclick="submitChange()">确认修改</button></div> 
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //判断奇偶
+    var a = 0;
+    $('.eyes').click(function(){
+        a += 1;
+        if(a%2 == 0){
+            $('.secreteyesk').addClass('none');
+            $('.secreteyes').removeClass('none');
+            $('#input_pas').prop('type','password');
+        }
+        else if(a%2 != 0){
+            $('.secreteyes').addClass('none');
+            $('.secreteyesk').removeClass('none');
+            $('#input_pas').prop('type','text');
+        }
+    })  
+    </script>
+</body>
+
+</html>

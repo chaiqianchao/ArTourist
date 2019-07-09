@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 禁止缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>ARLogin</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link  href="css/iconfont.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/domain.js"></script>
+</head>
+<body>
+    <div class="mengceng"></div>
+    <div class="Login">
+        <div class="name">
+            <input id="input_acc" class="input_ac" type="input" name="account"  placeholder="账号：" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+            <i class="iconfont icon-clearContent input_acc" onclick="clearContent(this)"></i>
+        </div>
+        <div class="password">
+           <input type="password" id="input_pas" class="input_pas" placeholder="密码：" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')">
+            <i class="iconfont icon-closeEye eyes secreteyes "></i>
+            <i class="iconfont icon-openEye none eyes secreteyesk"></i>
+        </div>
+        <div class="bottom_block">
+            <p class="block_left"><a href="./register.html">新用户注册</a></p>
+            <p class="block_right"><a href="./forgetPas.html">忘记密码？</a></p>
+        </div>
+      <div class="login">
+          <button class="loginButton" onclick="login()">登录</button>
+      </div>
+    </div>
+    <script type="text/javascript">
+        //判断奇偶
+    var a = 0;
+    $('.eyes').click(function(){
+        a += 1;
+        if(a%2 == 0){
+            $('.secreteyesk').addClass('none');
+            $('.secreteyes').removeClass('none');
+            $('.input_pas').prop('type','password');
+        }
+        else if(a%2 != 0){
+            $('.secreteyes').addClass('none');
+            $('.secreteyesk').removeClass('none');
+            $('.input_pas').prop('type','text');
+        }
+    })  
+    </script>
+</body>
+
+</html>
