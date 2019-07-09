@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- 禁止缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>adPage</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+</head>
+<body id="body">
+    <!-- 广告页面计时 -->
+    <div id="adPage" class="adPage">
+        <img id="adImg" src="./images/adImg.png">
+        <div class="countNum"><span id="countNum">3</span></div>
+    </div>
+    <!-- 广告页面计时end -->
+
+</body>
+
+<script type="text/javascript">
+    var timmer = 3;
+    var interval = setInterval(function(){
+        var countNum = document.getElementById("countNum");
+            countNum.innerHTML = --timmer;
+        if(timmer == -1 )
+        {
+            clearInterval(interval);
+            var body = document.getElementById("body");
+            var adPage = document.getElementById("adPage");
+             body.removeChild(adPage);
+        }
+    },1000);
+</script>
+</html>
