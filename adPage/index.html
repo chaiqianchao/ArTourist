@@ -13,16 +13,52 @@
 </head>
 <body id="body">
     <!-- 广告页面计时 -->
-    <div id="adPage" class="adPage">
+    <div id="adPage" class="adPage" style="display: block;">
         <img id="adImg" src="./images/adImg.png">
         <div class="countNum"><span id="countNum">3</span></div>
     </div>
     <!-- 广告页面计时end -->
+    <!-- 退出广告主页面 -->
+    <div id="mainCantainer" class="mainCantainer" style="display: none;">
+        <!-- 头部信息栏 -->
+        <div class="Titlebar">
+            <div class="infomation">
+                <div class="infoImg"><img src="./images/info.png"></div>
+                <div class="infoLocation">温州</div>
+                <div class="infoLocationIcon"><img src="./images/location.png"></div>
+            </div>
+            <span>首页</span>
+        </div>
+        <!-- 广告图片栏 -->
+        <div class="infoBar">
+            <img class="infoBarImg" src="./images/bgBar.png">
+        </div>
+        <!-- 游玩方式选择 -->
+        <div class="choose">
+            <div class="youshanImg"><img src="./images/youshan.png" onclick="youshan()"></div>
+            <div class="youshuiImg"><img src="./images/youshui.png" onclick="youshui()"></div>
+            <div class="xiaoyuanImg"><img src="./images/xiaoyuan.png" onclick="xiaoyuan()"></div>
+        </div>
+        <!-- 游玩方式选择 -->
+        <!-- 景点推荐 -->
+        <div class="recommend style1">
+            <img id="recommendImg" src="./images/wzu.png">
+            <div class="recommendTitle">温州大学</div>
+        </div>
+        <div class="recommend style2">
+            <img id="recommendImg" src="./images/wmu.png">
+            <div class="recommendTitle">温州医科大学</div>
+        </div>
+        <!-- 景点推荐end -->
 
+    </div>
+    <!-- 退出广告主页面end -->
 </body>
 
 <script type="text/javascript">
     var timmer = 3;
+    var mainCantainer = document.getElementById("mainCantainer");
+    // mainCantainer.style.height = document.body.clientHeight +"px";
     var interval = setInterval(function(){
         var countNum = document.getElementById("countNum");
             countNum.innerHTML = --timmer;
@@ -31,8 +67,28 @@
             clearInterval(interval);
             var body = document.getElementById("body");
             var adPage = document.getElementById("adPage");
-             body.removeChild(adPage);
+            // 直接删除节点，节省资源
+             // body.removeChild(adPage);
+             adPage.style.display = "none";
+             mainCantainer.style.display = "block";
+       // 3s广告过后如果页面出现不适配情况，重新调整页面大小
         }
     },1000);
+</script>
+<script type="text/javascript">
+    console.log(document.body.clientHeight);
+    
+    // console.log("1"+document.body.clientHeight);
+    // console.log("2"+window.innerHeight);
+    // 重置页面高度为屏幕可用高度
+    function youshan(){
+        console.log("游山");
+    }
+    function youshui(){
+        console.log("游水");
+    }
+    function xiaoyuan(){
+        console.log("校园游");
+    }
 </script>
 </html>
